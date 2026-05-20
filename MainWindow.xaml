@@ -6,7 +6,273 @@
         xmlns:local="clr-namespace:felkaru_rablo_BK"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <Grid>
+
+        <!-- Háttér -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#0f172a" Offset="0"/>
+                <GradientStop Color="#111827" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Glow effektek -->
+        <Ellipse Width="450"
+             Height="450"
+             Fill="#7c3aed"
+             Opacity="0.15"
+             HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Margin="-150,-100,0,0"/>
+
+        <Ellipse Width="400"
+             Height="400"
+             Fill="#06b6d4"
+             Opacity="0.12"
+             HorizontalAlignment="Right"
+             VerticalAlignment="Bottom"
+             Margin="0,0,-120,-120"/>
+
+        <Grid Margin="30">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- FEJLÉC -->
+            <Border Height="90"
+                CornerRadius="25"
+                Background="#1e293b"
+                BorderBrush="#334155"
+                BorderThickness="1">
+
+                <Grid Margin="25 0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel VerticalAlignment="Center">
+
+                        <TextBlock Text="🎰 PREMIUM SLOT"
+                               FontSize="34"
+                               FontWeight="Bold"
+                               Foreground="White"/>
+
+                        <TextBlock Text="Modern WPF Félkarú Rabló"
+                               FontSize="16"
+                               Foreground="#94a3b8"/>
+
+                    </StackPanel>
+
+                    <!-- Kredit -->
+                    <Border Grid.Column="1"
+                        Width="220"
+                        Height="55"
+                        CornerRadius="18"
+                        Background="#0f172a"
+                        VerticalAlignment="Center">
+
+                        <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center">
+
+                            <TextBlock Text="💰 "
+                                   FontSize="24"/>
+
+                            <TextBlock Text="Kredit:"
+                                   Foreground="#cbd5e1"
+                                   FontSize="24"/>
+
+                            <TextBlock x:Name="BalanceText"
+                                   Text="100"
+                                   Foreground="#22c55e"
+                                   FontWeight="Bold"
+                                   FontSize="24"
+                                   Margin="10 0 0 0"/>
+
+                        </StackPanel>
+
+                    </Border>
+
+                </Grid>
+
+            </Border>
+
+            <!-- SLOT GÉP -->
+            <Border Grid.Row="1"
+                Margin="0 35"
+                CornerRadius="35"
+                Background="#111827"
+                BorderBrush="#374151"
+                BorderThickness="2">
+
+                <Grid>
+
+                    <Grid Margin="40">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- REEL 1 -->
+                        <Border Grid.Column="0"
+                            Margin="15"
+                            CornerRadius="25"
+                            Background="#0f172a"
+                            BorderBrush="#7c3aed"
+                            BorderThickness="3">
+
+                            <StackPanel Margin="20">
+
+                                <Image x:Name="Reel1Top"
+                                   Height="130"/>
+
+                                <Border CornerRadius="18"
+                                    Background="#1e293b"
+                                    BorderBrush="#06b6d4"
+                                    BorderThickness="3"
+                                    Margin="0 15">
+
+                                    <Image x:Name="Reel1Middle"
+                                       Height="130"/>
+
+                                </Border>
+
+                                <Image x:Name="Reel1Bottom"
+                                   Height="130"/>
+
+                            </StackPanel>
+
+                        </Border>
+
+                        <!-- REEL 2 -->
+                        <Border Grid.Column="1"
+                            Margin="15"
+                            CornerRadius="25"
+                            Background="#0f172a"
+                            BorderBrush="#7c3aed"
+                            BorderThickness="3">
+
+                            <StackPanel Margin="20">
+
+                                <Image x:Name="Reel2Top"
+                                   Height="130"/>
+
+                                <Border CornerRadius="18"
+                                    Background="#1e293b"
+                                    BorderBrush="#06b6d4"
+                                    BorderThickness="3"
+                                    Margin="0 15">
+
+                                    <Image x:Name="Reel2Middle"
+                                       Height="130"/>
+
+                                </Border>
+
+                                <Image x:Name="Reel2Bottom"
+                                   Height="130"/>
+
+                            </StackPanel>
+
+                        </Border>
+
+                        <!-- REEL 3 -->
+                        <Border Grid.Column="2"
+                            Margin="15"
+                            CornerRadius="25"
+                            Background="#0f172a"
+                            BorderBrush="#7c3aed"
+                            BorderThickness="3">
+
+                            <StackPanel Margin="20">
+
+                                <Image x:Name="Reel3Top"
+                                   Height="130"/>
+
+                                <Border CornerRadius="18"
+                                    Background="#1e293b"
+                                    BorderBrush="#06b6d4"
+                                    BorderThickness="3"
+                                    Margin="0 15">
+
+                                    <Image x:Name="Reel3Middle"
+                                       Height="130"/>
+
+                                </Border>
+
+                                <Image x:Name="Reel3Bottom"
+                                   Height="130"/>
+
+                            </StackPanel>
+
+                        </Border>
+
+                    </Grid>
+
+                </Grid>
+
+            </Border>
+
+            <!-- ALSÓ RÉSZ -->
+            <StackPanel Grid.Row="2"
+                    HorizontalAlignment="Center">
+
+                <Button x:Name="SpinButton"
+                    Content="🎲 PÖRGETÉS"
+                    Width="260"
+                    Height="75"
+                    FontSize="28"
+                    FontWeight="Bold"
+                    Background="#7c3aed"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Click="SpinButton_Click">
+
+                    <Button.Template>
+
+                        <ControlTemplate TargetType="Button">
+
+                            <Border CornerRadius="20"
+                                Background="{TemplateBinding Background}">
+
+                                <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+
+                            </Border>
+
+                        </ControlTemplate>
+
+                    </Button.Template>
+
+                </Button>
+
+                <Border Margin="0 25 0 0"
+                    Padding="25 14"
+                    CornerRadius="18"
+                    Background="#1e293b"
+                    BorderBrush="#334155"
+                    BorderThickness="1">
+
+                    <TextBlock x:Name="ResultText"
+                           Text="Sok szerencsét!"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+
+                </Border>
+
+            </StackPanel>
+
+        </Grid>
 
     </Grid>
 </Window>
